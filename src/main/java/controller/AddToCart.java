@@ -20,8 +20,10 @@ public class AddToCart extends HttpServlet {
 
             ArrayList<Cart> cartList = new ArrayList<>();
             int id = Integer.parseInt(request.getParameter("id"));
+            String image=request.getParameter("image");
             Cart cm = new Cart();
             cm.setId(id);
+            cm.setImage(image);
             cm.setQuantity(1);
             HttpSession session = request.getSession();
             ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
@@ -36,6 +38,8 @@ public class AddToCart extends HttpServlet {
                 for (Cart c : cart_list) {
                     if (c.getId() == id) {
                         exist = true;
+                        c.setQuantity(c.getQuantity()+1);
+                        response.sendRedirect("index.jsp");
                     }
                 }
 

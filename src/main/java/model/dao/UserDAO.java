@@ -1,9 +1,7 @@
 package model.dao;
 import model.User;
 
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.sql.*;
 
 public class UserDAO {
     private Connection con;
@@ -28,7 +26,9 @@ public class UserDAO {
                 user=new User();
                 user.setId(rs.getInt("id"));
                 user.setName(rs.getString("name"));
+                user.setSurname(rs.getString("surname"));
                 user.setEmail(rs.getString("email"));
+                user.setAdmin(rs.getBoolean("admin"));
             }
         }catch (Exception e){
             e.printStackTrace();
@@ -36,5 +36,26 @@ public class UserDAO {
         }
         return user;
     }
+
+    /*public void doSave(User user) {
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement(
+                    "INSERT INTO customer (firstName, lastName, balance) VALUES(?,?,?)",
+                    Statement.RETURN_GENERATED_KEYS);
+            ps.setString(1, customer.getFirstName());
+            ps.setString(2, customer.getLastName());
+            ps.setDouble(3, customer.getBalance());
+            if (ps.executeUpdate() != 1) {
+                throw new RuntimeException("INSERT error.");
+            }
+            ResultSet rs = ps.getGeneratedKeys();
+            rs.next();
+            int id = rs.getInt(1);
+            customer.setId(id);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }*/
 
 }

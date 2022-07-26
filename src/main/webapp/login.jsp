@@ -20,26 +20,23 @@
 </head>
 <body>
 <%@include file="template-parts/navbar.jsp"%>
-<div style="justify-content: center; display: flex;"  class="container">
-    <div class="card">
-        <div class="card-header">Login utente</div>
+<div class="container">
+    <div class="card w-50 mx-auto my-5">
+        <div class="card-header text-center">Login utente</div>
         <div class="card-body">
             <form action="login" method="post">
                 <div class="form-group">
                     <label>Indirizzo email</label>
-                    <input type="email" class="form-control" name="Login-email" placeholder="inserisci l'email" required>
+                    <input type="email" name="Login-email" class="form-control" placeholder="Inserisci email">
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" class="form-control" name="Login-password" placeholder="********" required>
+                    <input type="password" name="Login-password" class="form-control" placeholder="******">
                 </div>
-
-             <!--   <div class="forget-box">
-                    <a href="#" class="link">forget password</a>
-                </div> -->
-
-                <div class="form-group">
-                    <button type="submit" class="btn"> Login</button>
+                <div class="box text-center">
+                    <button type="submit" class="btn" style="background-color: palegoldenrod">Login</button> <br> <br>
+                    <a href="forgot_passwrod.jsp">Password dimenticata?</a> <br> <br>
+                    Non hai un account? <a href="register.jsp">Registrati</a>
                 </div>
             </form>
         </div>

@@ -25,21 +25,22 @@
 <html>
 <head>
     <title>Click-Orders</title>
-    <%@include file="template-parts/header.jsp"%>
+   <%@include file="template-parts/header.jsp"%>
 </head>
 <body>
 <%@include file="template-parts/navbar.jsp"%>
+<br>
 <div class="container">
-    <div class="card-header" style="background-color: #033551;height: 10%;"><h1>I tuoi ordini:</h1></div>
+    <div class="card-header"><h1>I tuoi ordini:</h1></div>
     <table class="table">
         <thead>
         <tr>
             <th scope="col">Data</th>
             <th scope="col">Nome</th>
             <th scope="col">Categoria</th>
-            <th scope="col">Quantità</th>
+            <th scope="col">Quantit&agrave;</th>
             <th scope="col">Prezzo</th>
-            <th scope="col">Cancella</th>
+            <th scope="col"></th>
         </tr>
         </thead>
         <tbody>
@@ -51,8 +52,8 @@
             <td> <%= o.getName()%> </td>
             <td> <%= o.getCategory()%> </td>
             <td> <%= o.getQuantity()%> </td>
-            <td> <%=dcf.format(o.getPrice())%> </td>
-            <td><a class="btn" href="cancel-order?id=<%=o.getOrderId()%>"></a></td>
+            <td> <%=dcf.format(o.getPrice())%>&euro;</td>
+            <td><a style="color:red" href="cancel-order?id=<%=o.getOrderId()%>">Cancella ordine</a></td>
         </tr>
         <%}
         }

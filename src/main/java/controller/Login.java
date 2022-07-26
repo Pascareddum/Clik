@@ -32,7 +32,8 @@ public class Login extends HttpServlet {
                     request.getSession().setAttribute("auth", user);
                     response.sendRedirect("index.jsp");
                 }else{
-                    out.print("there is no user");
+                    response.sendRedirect("login.jsp");
+
                 }
             } catch (SQLException e) {
                 e.printStackTrace();

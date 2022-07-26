@@ -20,7 +20,7 @@ public class CancelOrder extends HttpServlet {
                 OrderDAO orderDao=new OrderDAO(ConPool.getConnection());
                 orderDao.cancelOrder(Integer.parseInt(id));
             }
-            response.sendRedirect("order.jsp");
+            response.sendRedirect("orders.jsp");
         } catch (SQLException e) {
             e.printStackTrace();
         }

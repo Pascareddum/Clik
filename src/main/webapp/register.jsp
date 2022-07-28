@@ -21,7 +21,7 @@
 <%@include file="template-parts/navbar.jsp"%>
     <div class="container">
         <div class="card w-50 mx-auto my-5">
-            <div class="card-header text-center">Registrazione utente</div>
+            <div class="card-header text-center" style="background-color:#eed9c4">Registrazione utente</div>
                 <div class="card-body">
                     <form action="registration" method="get">
                         <div class="row">
@@ -61,7 +61,7 @@
                                 </div>
                         </div>
                     <div class="box text-center">
-                        <button type="submit" class="btn" style="background-color: palegoldenrod">Registrati</button>
+                        <button type="submit" class="btn" style="background-color: #eed9c4">Registrati</button>
                     </div>
                     </form>
                 </div>

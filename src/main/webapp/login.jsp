@@ -22,7 +22,7 @@
 <%@include file="template-parts/navbar.jsp"%>
 <div class="container">
     <div class="card w-50 mx-auto my-5">
-        <div class="card-header text-center">Login utente</div>
+        <div class="card-header text-center" style="background-color:#eed9c4">Login utente</div>
         <div class="card-body">
             <form action="login" method="post">
                 <div class="form-group">

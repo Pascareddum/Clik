@@ -41,22 +41,22 @@
         <div class="media align-items-center align-items-lg-start text-center text-lg-left flex-column flex-lg-row">
           <div class="mr-2 mb-3 mb-lg-0">
 
-            <a href="view-product?id=<%=p.getId()%>&image=<%=p.getImage()%>&price=<%=p.getPrice()%>&name=<%=p.getName()%>"> <img class="text-center"  style="height: 200px;max-width: 100%" src="images/<%=p.getImage()%>" alt="Card image cap"> </a>
+            <a href="view-product?id=<%=p.getId()%>&image=<%=p.getImage()%>&price=<%=p.getPrice()%>&name=<%=p.getName()%>&category=<%=p.getCategory()%>&brand=<%=p.getBrand()%>&descr=<%=p.getDescr()%>"> <img class="text-center"  style="height: 200px;max-width: 100%" src="images/<%=p.getImage()%>" alt="Card image cap"> </a>
 
 
           </div>
 
           <div class="media-body">
             <h6 class="media-title font-weight-semibold">
-              <a href="view-product?id=<%=p.getId()%>&image=<%=p.getImage()%>&price=<%=p.getPrice()%>&name=<%=p.getName()%>" title="<%=p.getName()%>" data-abc="true"><%=name%></a>
+              <a href="view-product?id=<%=p.getId()%>&image=<%=p.getImage()%>&price=<%=p.getPrice()%>&name=<%=p.getName()%>&category=<%=p.getCategory()%>&brand=<%=p.getBrand()%>&descr=<%=p.getDescr()%>" title="<%=p.getName()%>" data-abc="true" style="color: black"><%=name%></a>
             </h6>
 
             <ul class="list-inline list-inline-dotted mb-3 mb-lg-2">
               <li class="list-inline-item"><a  class="text-muted" data-abc="true"><%=p.getCategory()%></a></li>
-              <li class="list-inline-item"><a  class="text-muted" data-abc="true">*Inserire marca*</a></li>
+              <li class="list-inline-item"><a  class="text-muted" data-abc="true"><%=p.getBrand()%></a></li>
             </ul>
 
-            <p class="mb-3"> Descrizione </p>
+            <p class="mb-3"> <%=p.getDescr()%></p>
           </div>
 
           <div class="mt-3 mt-lg-0 ml-lg-3 text-center">

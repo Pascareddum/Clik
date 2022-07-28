@@ -31,6 +31,8 @@ public class ProductDAO {
                row.setId(rs.getInt("id"));
                row.setName(rs.getString("name"));
                row.setCategory(rs.getString("category"));
+               row.setBrand(rs.getString("brand"));
+               row.setDescr(rs.getString("descr"));
                row.setPrice(rs.getDouble("price"));
                row.setImage(rs.getString("image"));
 

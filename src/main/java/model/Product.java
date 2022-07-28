@@ -4,6 +4,8 @@ public class Product {
     private int id;
     private String name;
     private String category;
+    private String brand;
+    private String descr;
     private double price;
     private String image;
 
@@ -11,11 +13,13 @@ public class Product {
         super();
     }
 
-    public Product(int id,String name,String category,double price,String image){
+    public Product(int id,String name,String category,String brand,String descr,double price,String image){
         super();
         this.id=id;
         this.name=name;
         this.category=category;
+        this.brand=brand;
+        this.descr=descr;
         this.price=price;
         this.image=image;
     }
@@ -44,6 +48,22 @@ public class Product {
         this.category = category;
     }
 
+    public String getBrand() {
+        return brand;
+    }
+
+    public void setBrand(String brand) {
+        this.brand = brand;
+    }
+
+    public String getDescr() {
+        return descr;
+    }
+
+    public void setDescr(String descr) {
+        this.descr = descr;
+    }
+
     public double getPrice() {
         return price;
     }
@@ -66,10 +86,10 @@ public class Product {
                 "id=" + id +
                 ", name='" + name + '\'' +
                 ", category='" + category + '\'' +
-                ", price='" + price + '\'' +
+                ", brand='" + brand + '\'' +
+                ", descr='" + descr + '\'' +
+                ", price=" + price +
                 ", image='" + image + '\'' +
                 '}';
     }
-
-
 }

@@ -15,7 +15,7 @@
 %>
 <html>
 <head>
-    <title>Clik-login</title>
+    <title>Clik</title>
     <%@include file="template-parts/header.jsp"%>
 </head>
 <body>
@@ -34,7 +34,7 @@
                     <input type="password" name="Login-password" class="form-control" placeholder="******">
                 </div>
                 <div class="box text-center">
-                    <button type="submit" class="btn" style="background-color: palegoldenrod">Login</button> <br> <br>
+                    <button type="submit" class="btn" style="background-color:#eed9c4">Login</button> <br> <br>
                     <a href="forgot_passwrod.jsp">Password dimenticata?</a> <br> <br>
                     Non hai un account? <a href="register.jsp">Registrati</a>
                 </div>

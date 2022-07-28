@@ -2,7 +2,6 @@
     <div class="container-fluid">
         <a href="index.jsp"> <img style="max-width: 40px" src="./images/Camera%20icon.png"></a>
         <a  class="nav-link" href="#">Chi siamo</a>
-        <a  class="nav-link" href="#">Servizi</a>
         <a  class="nav-link" href="#">Contatti</a>
         <a  class="nav-link" href="products.jsp">Prodotti</a>
             <div class="navbar ml-auto">
@@ -21,7 +20,7 @@
                         <%}
                         else{
                         %>
-                        <a class="nav-link" href="login.jsp"><img style="max-width: 30px" src="./images/User%20icon.png">Accedi</a>
+                        <a class="nav-link" href="login.jsp"><img style="max-width: 30px" src="./images/User%20icon.png"></a>
 
                         <%
                             }
@@ -29,5 +28,4 @@
                     </div>
 
         </div>
-    </div>
 </nav>

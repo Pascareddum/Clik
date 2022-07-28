@@ -1,18 +1,24 @@
-.navbar{
-    background-color: palegoldenrod;
+body{
+    background-color: #fff0db;
 }
+
 
 .navbar a{
     color:black;
 }
+
 
 .nav-link a{
     color: black;
 }
 
 .card-header{
-    background-color: palegoldenrod;
     color:black;
+}
+
+.card{
+    max-width: 300px;
+    background-color: #e4d5b7
 }
 
 .scroll {
@@ -41,7 +47,7 @@
 }
 
 
-/*product list*/
+/*product list
 
 .prod-cat li a{
     border-bottom: 1px dashed #d9d9d9;
@@ -175,4 +181,4 @@
 .pro-d-head {
     font-size: 18px;
     font-weight: 300;
-}
+} */

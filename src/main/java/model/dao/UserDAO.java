@@ -4,58 +4,83 @@ import model.User;
 import java.sql.*;
 
 public class UserDAO {
-    private Connection con;
-    private String query;
-    private PreparedStatement pst;
-    private ResultSet rs;
 
-    public UserDAO(Connection con){
-            this.con=con;
-    }
+
+
 
     public User userLogin(String email, String password){
-        User user=null;
-        try{
-            query="select * from users where email=? and password=?";
-            pst=this.con.prepareStatement(query);
-            pst.setString(1,email);
-            pst.setString(2,password);
-            rs = pst.executeQuery();
 
-            if(rs.next()){
-                user=new User();
-                user.setId(rs.getInt("id"));
-                user.setName(rs.getString("name"));
-                user.setSurname(rs.getString("surname"));
-                user.setEmail(rs.getString("email"));
-                user.setAdmin(rs.getBoolean("admin"));
-            }
-        }catch (Exception e){
-            e.printStackTrace();
-            System.out.print(e.getMessage());
-        }
-        return user;
-    }
+        try(Connection con=ConPool.getConnection()){
+            PreparedStatement ps=con.prepareStatement("select * from users where email=? and password=?");
+            ps.setString(1, email);
+            ps.setString(2, password);
 
-    /*public void doSave(User user) {
-        try (Connection con = ConPool.getConnection()) {
-            PreparedStatement ps = con.prepareStatement(
-                    "INSERT INTO customer (firstName, lastName, balance) VALUES(?,?,?)",
-                    Statement.RETURN_GENERATED_KEYS);
-            ps.setString(1, customer.getFirstName());
-            ps.setString(2, customer.getLastName());
-            ps.setDouble(3, customer.getBalance());
-            if (ps.executeUpdate() != 1) {
-                throw new RuntimeException("INSERT error.");
+            ResultSet rs = ps.executeQuery();
+
+            if (rs.next()) {
+                User user = new User();
+                user.setId(rs.getInt(1));
+                user.setName(rs.getString(2));
+                user.setSurname(rs.getString(3));
+                user.setEmail(rs.getString(4));
+                user.setPassword(rs.getString(5));
+                user.setAdmin(rs.getBoolean(6));
+
+                return user;
             }
-            ResultSet rs = ps.getGeneratedKeys();
-            rs.next();
-            int id = rs.getInt(1);
-            customer.setId(id);
+
+            return null;
 
         } catch (SQLException e) {
             throw new RuntimeException(e);
         }
-    }*/
+    }
+
+    public void doSave(User user) {
+
+        try (Connection con = ConPool.getConnection()) {
+
+            PreparedStatement ps = con.prepareStatement(
+                    "INSERT INTO users (nome,surname,email,password,admin) VALUES(?,?,?,?,?)",
+                    Statement.RETURN_GENERATED_KEYS);
+
+            ps.setString(1, user.getName());
+            ps.setString(2, user.getSurname());
+            ps.setString(3, user.getEmail());
+            ps.setString(4, user.getPassword());
+            ps.setBoolean(5, user.isAdmin());
+
+            if (ps.executeUpdate() != 1) {
+                throw new RuntimeException("INSERT error.");
+            }
+
+            ResultSet rs = ps.getGeneratedKeys();
+            rs.next();
+            int id = rs.getInt(1);
+            user.setId(id);
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public boolean isAlreadyRegistered(String email) {
+
+        try (Connection con = ConPool.getConnection()) {
+            PreparedStatement ps = con.prepareStatement(
+                    "SELECT email FROM users WHERE email=?");
+
+            ps.setString(1, email);
+
+            ResultSet rs = ps.executeQuery();
+
+            return rs.next();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+
 
 }

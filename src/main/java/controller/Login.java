@@ -21,23 +21,18 @@ public class Login extends HttpServlet {
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-        try(PrintWriter out=response.getWriter()){
             String email=request.getParameter("Login-email");
             String password=request.getParameter("Login-password");
 
-            try {
-                UserDAO udao=new UserDAO(ConPool.getConnection());
+
+                UserDAO udao=new UserDAO();
                 User user=udao.userLogin(email,password);
                 if(user !=null){
                     request.getSession().setAttribute("auth", user);
                     response.sendRedirect("index.jsp");
                 }else{
                     response.sendRedirect("login.jsp");
-
                 }
-            } catch (SQLException e) {
-                e.printStackTrace();
-            }
-        }
     }
 }
+

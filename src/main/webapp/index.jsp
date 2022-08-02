@@ -26,13 +26,10 @@
 <%@include file="template-parts/navbar.jsp"%>
 <br>
 <br>
-<div class="container">
-    <h2 style="text-align: right"> <img src="images/welcome.jpg" alt="welcome image" style="width: 70%;height: 70%;text-align: left">Benevenuto su click!</h2>
-
-</div>
+        <img src="images/welcome.jpg" alt="welcome image" style="width: 60%;height: 60%">
 <div class="card-header d-inline-block" style="width: 100%; background-color: #eed9c4;">
-    <h2 style="text-align: center"> I nostri prodotti:</h2>
-    <h6  style="text-align: right"> <a href="#">continua a guardare>></a></h6>
+    <h1 style="text-align: center"> I nostri prodotti:</h1>
+    <h6  style="text-align: right"> <a href="#">continua a guardare..</a></h6>
         <div style="overflow-x:scroll;display: flex;float: left;width: 100%;height: 100%">
             <%
                 Collections.shuffle(products);
@@ -74,8 +71,8 @@
 <br>
 <br>
     <div class="card-header d-inline-block" style="width: 100%; background-color:#faf0e6">
-        <h2 style="text-align: center"> Le nostre lenti:</h2>
-        <h6  style="text-align: right"> <a href="#">continua a guardare>></a></h6>
+        <h1 style="text-align: center"> Le nostre lenti:</h1>
+        <h6  style="text-align: right"> <a href="#">continua a guardare..</a></h6>
         <div style="overflow-x:scroll;display: flex;float: left;width: 100%;height: 100%">
             <%
                 Collections.shuffle(products);
@@ -116,8 +113,8 @@
 <br>
 <br>
     <div class="card-header d-inline-block" style="width: 100%; background-color:#e4d5b7">
-        <h2 style="text-align: center"> Le nostre fotocamere:</h2>
-        <h6  style="text-align: right"> <a href="#">continua a guardare>></a></h6>
+        <h1 style="text-align: center"> Le nostre fotocamere:</h1>
+        <h6  style="text-align: right"> <a href="#">continua a guardare..</a></h6>
         <div style="overflow-x:scroll;display: flex;float: left;width: 100%;height: 100%">
             <%
                 Collections.shuffle(products);
@@ -159,8 +156,8 @@
 <br>
 <br>
     <div class="card-header d-inline-block" style="width: 100%;background-color:#d9b99b">
-        <h2 style="text-align: center"> I nostri accessori:</h2>
-        <h6  style="text-align: right"> <a href="#">continua a guardare>></a></h6>
+        <h1 style="text-align: center"> I nostri accessori:</h1>
+        <h6  style="text-align: right"> <a href="#">continua a guardare..</a></h6>
         <div style="overflow-x:scroll;display: flex;float: left;width: 100%;height: 100%">
             <%
                 Collections.shuffle(products);

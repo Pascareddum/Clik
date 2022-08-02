@@ -35,7 +35,7 @@
                 </div>
                 <div class="box text-center">
                     <button type="submit" class="btn" style="background-color:#eed9c4">Login</button> <br> <br>
-                    <a href="forgot_passwrod.jsp">Password dimenticata?</a> <br> <br>
+                    <a href="forgotPassword.jsp">Password dimenticata?</a> <br> <br>
                     Non hai un account? <a href="register.jsp">Registrati</a>
                 </div>
             </form>

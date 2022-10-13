@@ -1,0 +1,67 @@
+.card{
+    padding: 10px;
+    cursor: pointer;
+    transition: .3s all ease-in-out;
+    flex-direction: row;
+
+}
+
+.card-header{
+    color:black;
+    width: 100%;
+    background-color: #eed9c4;
+}
+
+.card-img img{
+    height:250px;
+    max-width: 200px;
+}
+.card:hover{
+    box-shadow: 2px 2px 15px #fd9a6ce5;
+    transform: scale(1.02)
+}
+
+
+.card-body{
+    width: 350px;
+    height:100%;
+}
+
+.card .text-muted{
+    font-size: 0.82rem
+}
+
+
+.card-body .btn-group .btn{
+    padding: 0;
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 50%;
+    position: relative
+}
+
+.card-body .btn-group>.btn-group:not(:last-child)>.btn, .card-body .btn-group>.btn:not(:last-child):not(.dropdown-toggle){
+    border-radius: 50%;
+    transition: ease-in all .4s
+}
+
+.card-body input[type="radio"]{
+    visibility: hidden
+}
+
+.card-body .btn:not(:disabled):not(.disabled).active::after, .card-body .btn:not(:disabled):not(.disabled):active::after{
+    content: "";
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    top: 4px;
+    left: 4.2px;
+    background-color: #fff;
+    position: absolute;
+    transition: ease-in all .4s
+}
+
+.card-body .btn.btn-light:not(:disabled):not(.disabled).active::after, .card-body .btn.btn-light:not(:disabled):not(.disabled):active::after{
+    background-color: #000
+}

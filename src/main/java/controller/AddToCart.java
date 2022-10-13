@@ -4,33 +4,27 @@ import jakarta.servlet.*;
 import jakarta.servlet.http.*;
 import jakarta.servlet.annotation.*;
 import model.Cart;
+import model.User;
 
 import java.io.IOException;
-import java.io.PrintWriter;
 import java.util.ArrayList;
 
 @WebServlet("/add-to-cart")
 public class AddToCart extends HttpServlet {
-    private static final long serialVersionUID = 1L;
-
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
-
-        try (PrintWriter out = response.getWriter()) {
-
+        User auth = (User) request.getSession().getAttribute("auth");
+        if (auth != null) {
             ArrayList<Cart> cartList = new ArrayList<>();
             int id = Integer.parseInt(request.getParameter("id"));
-            String image=request.getParameter("image");
             Cart cm = new Cart();
             cm.setId(id);
-            cm.setImage(image);
             cm.setQuantity(1);
             HttpSession session = request.getSession();
             ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
             if (cart_list == null) {
                 cartList.add(cm);
                 session.setAttribute("cart-list", cartList);
-                response.sendRedirect("index.jsp");
             } else {
                 cartList = cart_list;
 
@@ -39,16 +33,16 @@ public class AddToCart extends HttpServlet {
                     if (c.getId() == id) {
                         exist = true;
                         c.setQuantity(c.getQuantity()+1);
-                        response.sendRedirect("index.jsp");
                     }
                 }
 
                 if (!exist) {
                     cartList.add(cm);
-                    response.sendRedirect("index.jsp");
                 }
             }
         }
+        else{
+            response.sendError(HttpServletResponse.SC_UNAUTHORIZED);
+        }
     }
-
 }

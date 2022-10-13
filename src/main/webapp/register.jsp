@@ -14,10 +14,15 @@
 %>
 <html>
 <head>
-<title>Clik-register</title>
+<title>Clik</title>
 <%@include file="template-parts/header.jsp"%>
 </head>
 <body>
+<script>
+    var password=document.getElementsByName("password");
+    var strongRegex = new RegExp("^(?=.*[a-z])(?=.*[A-Z])(?=.*[0-9])(?=.*[!@#\$%\^&\*])");
+    if(strongRegex.test(password));
+</script>
 <%@include file="template-parts/navbar.jsp"%>
     <div class="container">
         <div class="card w-50 mx-auto my-5">
@@ -28,13 +33,13 @@
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label">Nome:</label>
-                                    <input type="text" name="name" class="form-control" placeholder="Mickey">
+                                    <input type="text" name="name" class="form-control" placeholder="Mickey" required>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4">
                                 <div class="form-outline">
                                     <label class="form-label">Cognome:</label>
-                                    <input type="text" name="surname" class="form-control" placeholder="Mouse">
+                                    <input type="text" name="surname" class="form-control" placeholder="Mouse" required>
                                 </div>
                             </div>
                         </div>
@@ -42,13 +47,13 @@
                             <div class="col-md-6 mb-4 pb-2">
                                 <div class="form-outline">
                                     <label class="form-label">Email:</label>
-                                    <input type="email" name="email" class="form-control" placeholder="mickeymouse@mail.com">
+                                    <input type="email" name="email" class="form-control" placeholder="mickeymouse@mail.com" required>
                                 </div>
                             </div>
                             <div class="col-md-6 mb-4 pb-2">
                                 <div class="form-outline">
                                     <label class="form-label">Password:</label>
-                                    <input type="password" name="password" class="form-control" placeholder="******">
+                                    <input type="password" name="password" class="form-control" placeholder="******" required>
                                 </div>
                             </div>
                         </div>

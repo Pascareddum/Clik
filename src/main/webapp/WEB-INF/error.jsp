@@ -13,7 +13,7 @@
         request.setAttribute("auth",auth);
     }
 
-    ProductDAO pd=new ProductDAO(ConPool.getConnection());
+    ProductDAO pd=new ProductDAO();
     List<Product> products= pd.getAllProducts();
     ArrayList<Cart> cart_list=(ArrayList<Cart>) session.getAttribute("cart-list");
     if(cart_list!=null){
@@ -42,9 +42,9 @@
     setTimeout("window.location.href='<%= (String) request.getAttribute("redirect") %>'", 10000)
 </script>
 
-<div class="<%= (String) request.getAttribute("type") %>">
+<div class="<%= (String) request.getAttribute("type") %> text-center">
     <h1><%= (String) request.getAttribute("msg") %></h1>
-    <h2><a href="<%= (String) request.getAttribute("redirect") %>" class="error">Procedi</a></h2>
+    <h2><a class="btn rounded-left" style="background-color:#eed9c4" href="<%= (String) request.getAttribute("redirect") %>" class="error">Procedi</a></h2>
     <span id="timer" class="error"></span>
 </div>
 

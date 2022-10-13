@@ -21,35 +21,29 @@
 </head>
 <body>
 <%@include file="template-parts/navbar.jsp"%>
-<div class="container padding-bottom-3x mb-2 mt-5">
-    <div class="row justify-content-center">
-    <div class="col-lg-8 col-md-10">
+    <div class="container">
+        <div class="card w-50 mx-auto my-5">
+            <div class="card-header text-center" style="background-color:#eed9c4"><h4> Password dimenticata?</h4></div>
         <div class="forgot">
-        <h1> Password dimenticata?</h1>
         <p> Cambia la tua password in 3 semplici step!</p>
     <ol>
         <li>Inserisci il tuo indirizzo email qui sotto</li>
-        <li>Il nostro sistema ti invierà un pin temporaneo </li>
-        <li>Inserisci il pin temporaneo alla prossima pagine</li>
+        <li>Il nostro sistema ti invierà un OTP </li>
+        <li>Inserisci l'OTP nella prossima pagina</li>
     </ol>
     </div>
-<form class="card mt-4" action="forgotPassword" method="post">
-    <div class="card-body">
+<form action="forgotPassword" method="post">
         <div class="form-group">
             <label for="email"> Inserisci il tuo indirizzio email</label>
             <input class="form-control" type="text" name="email" id="email">
         </div>
-    </div>
-        <div class="card-footer">
-            <button type="submit"> Nuova password</button>
+        <div class="box text-center">
+            <button type="submit" class="btn" style="background-color: #eed9c4"> Nuova password</button>
             <a href="login.jsp" style="text-align: right">Torna al login</a>
         </div>
 </form>
     </div>
     </div>
-</div>
-
-
 <%@include file="template-parts/footer.jsp"%>
 </body>
 </html>

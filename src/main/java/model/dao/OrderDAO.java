@@ -49,7 +49,7 @@ public class OrderDAO {
 
             while (rs.next()){
                 Order order=new Order();
-                ProductDAO productDao=new ProductDAO(this.con);
+                ProductDAO productDao=new ProductDAO();
                 int pId=rs.getInt("p_id");
 
                 Product product=productDao.getSingleProduct(pId);

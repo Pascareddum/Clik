@@ -1,0 +1,59 @@
+.card{
+    max-width: 1000px;
+    width: 100%;
+    padding: 4rem;
+    box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+    margin: 8px;
+}
+
+@media(max-width:768px){
+    .card{
+        width: 100%;
+        padding: 1.5rem
+    }
+}
+
+.row{
+    margin: 0
+}
+
+.col{
+    padding: 0
+}
+
+.price{
+    margin-top: 2rem
+}
+
+.btn{
+    padding: 1.8vh 4.5vh;
+    height: fit-content;
+    border-radius: 3px
+}
+
+.btn:focus{
+    box-shadow: none;
+    outline: none;
+    box-shadow: none;
+    -webkit-box-shadow: none;
+    -webkit-user-select: none;
+    transition: none
+}
+
+@media(max-width:768px){
+    .btn{
+        padding: 1vh;
+        font-size: 0.9rem;
+        height: fit-content;
+        border-radius: 3px
+    }
+}
+
+a{
+    color: unset
+}
+
+a:hover{
+    color: unset;
+    text-decoration: none
+}

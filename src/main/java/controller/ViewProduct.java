@@ -22,12 +22,10 @@ public class ViewProduct extends HttpServlet {
             String name=request.getParameter("name");
             String category=request.getParameter("category");
             String brand=request.getParameter("brand");
-            String descr=request.getParameter("descr");
             product.setId(id);
             product.setName(name);
             product.setCategory(category);
             product.setBrand(brand);
-            product.setDescr(descr);
             product.setPrice(price);
             product.setImage(image);
             HttpSession session = request.getSession();

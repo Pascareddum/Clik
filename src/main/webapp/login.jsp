@@ -27,11 +27,11 @@
             <form action="login" method="post">
                 <div class="form-group">
                     <label>Indirizzo email</label>
-                    <input type="email" name="Login-email" class="form-control" placeholder="Inserisci email">
+                    <input type="email" name="Login-email" class="form-control" placeholder="Inserisci email" required>
                 </div>
                 <div class="form-group">
                     <label>Password</label>
-                    <input type="password" name="Login-password" class="form-control" placeholder="******">
+                    <input type="password" name="Login-password" class="form-control" placeholder="******" required>
                 </div>
                 <div class="box text-center">
                     <button type="submit" class="btn" style="background-color:#eed9c4">Login</button> <br> <br>

@@ -11,23 +11,22 @@
     if(auth!=null){
         request.setAttribute("auth",auth);
     }
-
-    ArrayList<Cart> cart_list=(ArrayList<Cart>) session.getAttribute("cart-list");
-    List<Cart> cartProduct=null;
-    if(cart_list!=null){
-        ProductDAO pDAO= new ProductDAO(ConPool.getConnection());
-        cartProduct=pDAO.getCartProducts(cart_list);
-     double total=pDAO.getTotalCartPrice(cart_list);
-        request.setAttribute("cart_list",cart_list);
-        request.setAttribute("total",total);
+    ArrayList<Cart> cart_list = (ArrayList<Cart>) session.getAttribute("cart-list");
+    List<Cart> cartProduct = null;
+    if (cart_list != null) {
+        ProductDAO pDao = new ProductDAO();
+        cartProduct = pDao.getCartProducts(cart_list);
+        double total = pDao.getTotalCartPrice(cart_list);
+        request.setAttribute("total", total);
+        request.setAttribute("cart_list", cart_list);
     }
+
 %>
 <!DOCTYPE html>
 <html>
 <head>
     <%@include file="template-parts/header.jsp"%>
-
-    <title>Clik-Login</title>
+    <title>Clik</title>
 </head>
 <body>
 <%@include file="template-parts/navbar.jsp"%>
@@ -53,13 +52,14 @@
                         <tr>
                             <td>
                                 <div style="width: 100%;height: 200px; text-align: center">
-                                    <a href="view-product?id=<%=c.getId()%>&image=<%=c.getImage()%>&price=<%=c.getPrice()%>&name=<%=c.getName()%>"><img class="text-center" style="height: 200px;width: 200px" src="images/<%=c.getImage()%>" alt="Card image cap"></a>
+                                    <a href="view-product?id=<%=c.getId()%>&image=<%=c.getImage()%>&price=<%=c.getPrice()%>&name=<%=c.getName()%>"><img class="text-center" style="max-height: 100%;width: 100px" src="images/<%=c.getImage()%>" alt="Card image cap"></a>
                                 </div>
                             </td>
                             <td>
                                 <figure class="itemside align-items-center">
                                     <figcaption class="info"> <a href="view-product?id=<%=c.getId()%>&image=<%=c.getImage()%>&price=<%=c.getPrice()%>&name=<%=c.getName()%>" class="title text-dark" data-abc="true" style="color: black;text-decoration: none"> <%=c.getName()%></a>
                                         <p class="text-muted small"><%=c.getCategory()%></p>
+                                        <p class="text-muted small"><%=c.getBrand()%></p>
                                     </figcaption>
                                 </figure>
                             </td>
@@ -87,7 +87,7 @@
                     </dl>
                     <hr>
                     <div class="box text-center">
-                        <button type="submit" class="btn btn-primary" style="background-color: forestgreen">Acquista</button>
+                        <a class="btn" href="check-out" type="submit" class="btn btn-primary" style="background-color: forestgreen">Acquista</a>
                     </div>
                     <br>oppure
                     <a href="index.jsp"data-abc="true" style="text-decoration: none">continua a comprare</a>
